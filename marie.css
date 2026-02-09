@@ -1,153 +1,188 @@
 /* RESET */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-    background-color: white;
-    
-}
-/* Empêche tous les soulignements */
-a{
-    text-decoration:none;
-    color:inherit;
+
+/* BODY */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fafafa;
 }
 
 /* NAVBAR */
 .navbar {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px;
-    background: linear-gradient(to right, #000000,#5a5a5a);
-    color:D4AF37;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.navbar ul{
-    display:flex;
-    gap:25px;
-    margin-left: auto;
-}
-.navbar ul li {
-    list-style: none;
-    padding: 5px 10px;
-    display: inline-block;
-    transition: transform 0.2s ease,color 0.2s ease
-}
-
-.navbar ul li:hover {
-    transform: translateY(-5px);
-    color: #D4AF37;
-}
-
-.navbar {
-    position: relative; /* nécessaire pour que la fleur se positionne par rapport à la navbar */
-}
-
-.fleur-navbar {
-    position: absolute; /* place la fleur sans déplacer la bannière */
-    bottom: -30px;      /* juste sous la navbar */
-    left: 20px;         /* distance depuis le bord gauche */
-    width: 70px;        /* taille de la fleur */
-    height: auto;       /* garde les proportions */
-}
-
-/* HERO */
-.hero{
-    text-align:center;
-    padding:100px 40px;
-    color:white;
-    background: linear-gradient(to right, #000000,#5a5a5a);
-}
-
-/* SECTIONS */
-section{
-    padding:60px 20px;
-}
-
-/* Titres sans soulignement */
-h2{
-    font-size:28px;
-    margin-bottom:25px;
-    border:none;
-    color: #D4AF37;
-}
-
-/* CONTENEUR A PROPOS */
-.about-container{
-    display:flex;
-    align-items:center;
-    gap:20px;
-    flex-wrap:wrap;
-    justify-content: center;
-}
-
-/* PHOTO (pas agrandie, pas entourée) */
-.profile-photo{
-    width:200px;
-    height:250px;
-    object-fit:cover;
-    border-radius:50%;
-    border:none;
-}
-
-/* TEXTE */
-.about-text{
-    max-width:600px;
-}
-
-.about-text p{
-    margin-bottom:15px;
-    line-height:1.8;
-    font-size: 18px;
-}
-
-/* PASSION */
-.passion p{
-    max-width:700px;
-    margin-bottom:25px;
-    line-height:1.8;
-    font-size: 18px;
-    margin-left: 20px;
-}
-
-.passion{
-    flex-direction: column;
+.nav-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-/* BOUTON */
-.btn-contact {
-    background-color: linear-gradient( 145deg,#666666,#444444); /* remets ton bleu si besoin */
-    color: black;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #b22222;
+}
+
+.fleur-navbar {
+    height: 45px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.fleur-navbar:hover {
+    transform: rotate(8deg) scale(1.1);
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 100px 40px;
+    color: white;
+
+    /* Fleur en arrière-plan avec voile noir/blanc */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(255,255,255,0.3)),
+                url("fleur.webp");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+}
+
+/* ABOUT */
+.about {
+    padding: 60px 20px;
+    background: #fff;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    gap: 30px;
+}
+
+.profile-photo {
+    width: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+/* SEPARATOR */
+.separator {
     border: none;
-    padding: 15px 40px;
-    font-size: 22px;
-    border-radius: 30px;
-    cursor: pointer;
+    height: 2px;
+    background: #ddd;
+    margin: 40px auto;
+    width: 80%;
+}
+
+/* PASSION */
+.passion {
+    padding: 60px 20px;
+    text-align: center;
+    background: #fff;
+}
+
+.passion h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.passion p {
+    max-width: 800px;
+    margin: 10px auto;
+    color: #444;
+}
+
+.btn-contact {
     margin-top: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease; box-shadow 0.2 ease;
-    
+    padding: 12px 25px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn-contact:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(145deg,#666666,#444444);
+    background: #444;
+    transform: scale(1.05);
 }
-.btn-contact:active {
-    transform: translateY(2px);
-    box-shadow: 0 4px 10px rgba(136,136, 136, 0.4);
-}
+
 /* FOOTER */
 footer {
-  text-align: center;
-  padding: 40px 20px;
-  color: white;
-  margin-top: 40px;
-  background: linear-gradient(135deg, #000000, #6e6e6e);
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 25px 10px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-photo {
+        margin-bottom: 20px;
+    }
 }
